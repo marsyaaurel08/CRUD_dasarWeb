@@ -19,7 +19,6 @@
             $("#commentSection").hide();
             $("#logoSection").hide();
             
-
             // Tampilkan bagian katalog dan comment setelah tombol next diklik
             $("#nextButton").click(function() {
                 $("#welcomeSection").hide();
