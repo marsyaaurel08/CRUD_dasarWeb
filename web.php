@@ -59,7 +59,6 @@
         <div class="welcomeText">
             <h1>Marsya Jilbab</h1>
             <p>Halo! Selamat Datang di Marsya Jilbab</p>
-            <button id="nextButton">Next</button>
         </div>
     </div>
 
