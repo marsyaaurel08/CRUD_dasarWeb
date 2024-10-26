@@ -1,328 +1,129 @@
 body {
-    background: url('../UTS/img/bg.jpg') no-repeat center center fixed; 
-    background-size: cover;
-    font-family: 'Times New Roman', sans-serif;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-
-/* Styling untuk halaman Selamat Datang */
-#welcomeSection h1 {
-    font-size: 100px; 
-    font-weight: bold;
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin-top: 12%;
-    color: rgb(155, 51, 85); 
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
-}
-
-
-#welcomeSection p {
-    text-align: center;
-    font-size: 50px;
-    color: rgb(155, 51, 85);
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7); 
-}
-
-
-#nextButton {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 30px;
-    font-size: 30px;
-    color: rgb(255, 216, 222);
-    background-color: rgba(155, 51, 85, 0.8); 
-    border: none;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-/*Styling untuk logo*/
-#logoSection {
-    position: center;
-}
-
-/* Styling untuk katalog*/
-#katalogSection {
-    margin: 30px auto;
-    padding: 20px;
-    background-color: rgba(244, 244, 244, 0.5); 
-    border-radius: 15px;
-    max-width: 1000px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Times New Roman', sans-serif;
-}
-
-#kotakKatalog, #flipKatalog {
-    padding: 85px;
-    background-color: rgba(255, 216, 222, 0.5); 
-    color: rgb(182, 73, 109);
-    border: solid 2px rgb(182, 73, 109);
-    border-radius: 5px;
-}
-
-#kotakKatalog {
-    text-align: left;
-    display: none;
-}
-
-#flipKatalog {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-}
-
-table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    font-family: 'Times New Roman', sans-serif;
-    box-shadow: 0 2px 15px rgba(64, 64, 64, 0.2);
+    max-width: 360px;
 }
-
-/* Warna latar dan font untuk judul kolom */
-th {
-    background-color: rgba(182, 73, 109, 0.8); 
-    color: white;
-    padding: 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    text-align: left;
-}
-
-/* Warna latar belakang dan padding untuk sel */
-td {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-    background-color: rgba(249, 249, 249, 0.8); 
-}
-
-/* Efek hover untuk baris */
-tr:hover {
-    background-color: rgba(241, 241, 241, 0.8); 
-}
-
-/* Style khusus untuk gambar */
-td img {
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-/* Efek zoom saat hover di gambar */
-td img:hover {
-    transform: scale(1.1);
-}
-
-/* Penambahan garis horizontal pada header */
-th, td {
-    border-bottom: 2px solid #ddd;
-}
-
-/* Warna latar belakang alternatif untuk baris */
-tr:nth-child(even) {
-    background-color: rgba(242, 242, 242, 0.8); 
-}
-
-
-
-
-/* Styling Untuk section tentang kami */
-#tentangKamiSection {
-    margin: 30px auto;
-    padding: 20px;
-    background-color: rgba(244, 244, 244, 0.5);
-    border-radius: 15px;
-    max-width: 1000px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Times New Roman', sans-serif;
-}
-
-#kotakTentangKami, #flipTentangKami {
-    padding: 85px;
-    background-color: rgba(255, 216, 222, 0.5); 
-    color: rgb(182, 73, 109);
-    border: solid 2px rgb(182, 73, 109);
-    border-radius: 5px;
-}
-
-#kotakTentangKami {
-    text-align: left;
-    display: none;
-}
-
-#flipTentangKami {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-}
-
-
-/* Styling untuk judul */
-#tentangKamiSection h1 {
-    font-size: 32px;
-    color: rgb(182, 73, 109);
-    text-align: center;
+h2 {
+    font-size: 1.8em;
+    color: #333;
     margin-bottom: 20px;
 }
-
-/* Styling untuk paragraf teks */
-#tentangKamiSection p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: black;
-    margin-bottom: 15px;
-}
-
-/* Highlight pada nama bisnis */
-#tentangKamiSection strong {
-    color: rgb(182, 73, 109);
-    font-weight: bold;
-}
-
-/* Styling link */
-#tentangKamiSection a {
-    color: #2196F3;
-    text-decoration: none;
-}
-
-#tentangKamiSection a:hover {
-    text-decoration: underline;
-}
-
-/* Gaya gambar store dan maps */
-#tentangKamiSection img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* Untuk section Comment */
-#commentSection {
-    margin: 30px auto;
-    padding: 20px;
-    background-color: rgba(244, 244, 244, 0.5); 
-    border-radius: 15px;
-    max-width: 1000px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Times New Roman', sans-serif;
-}
-
-#kotakComment, #flipComment {
-    padding: 85px;
-    background-color: rgba(255, 216, 222, 0.5); 
-    color: rgb(182, 73, 109);
-    border: solid 2px rgb(182, 73, 109);
-    border-radius: 5px;
-}
-
-#kotakComment {
+.form-group {
+    margin-bottom: 20px;
     text-align: left;
-    display: none;
 }
-
-#flipComment {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-}
-
-#thankYouMessage {
-    display:none; 
-    color:rgb(182, 73, 109);
-    font-weight:bold;
-    font-size: 20px;
-}
-
-/* Styling untuk bagian tabel komentar */
-#commentDisplay {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: rgba(249, 249, 249, 0.8); 
-}
-
-#commentDisplay h2 {
-    font-size: 20px;
-    color: rgb(182, 73, 109);
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-/* Tabel */
-#commentTable {
+.form-group input {
     width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease;
 }
-
-/* Header tabel */
-#commentTable thead th {
-    background-color: rgba(242, 242, 242, 0.8); 
-    color: rgb(182, 73, 109);
-    padding: 10px;
-    text-align: left;
-    border-bottom: 2px solid #ddd;
-    font-size: 16px;
+.form-group input:focus {
+    border-color: #6e8efb;
+    outline: none;
 }
-
-/* Baris dan sel tabel */
-#commentTable tbody td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6e8efb;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.login-button:hover {
+    background-color: #5a77db;
+}
+.login-button:active {
+    transform: scale(0.98);
+}
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header h1 {
     color: #333;
 }
-
-/* Warna selang-seling untuk baris tabel */
-#commentTable tbody tr:nth-child(even) {
-    background-color: rgba(249, 249, 249, 0.8); 
+.logout-button {
+    padding: 10px 20px;
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
-
-/* Hover effect untuk baris tabel */
-#commentTable tbody tr:hover {
-    background-color: rgba(241, 241, 241, 0.8); 
+.logout-button:hover {
+    background-color: #d93a4a;
 }
-
-@media (max-width: 768px) {
-    #commentTable {
-        width: 100%;
-    }
-
-    #commentTable thead {
-        display: none; /* Hide */
-    }
-
-    #commentTable tbody td {
-        display: block;
-        width: 100%;
-        text-align: right;
-        padding: 10px;
-        position: relative;
-        border: none;
-        border-bottom: 1px solid #ddd;
-    }
-
-    #commentTable tbody td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-        background-color: rgba(242, 242, 242, 0.8); 
-    }
-
-    #commentTable tbody td:last-child {
-        border-bottom: 0;
-    }
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 15px;
+}
+.product-info h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.product-info p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+.product-info .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6e8efb;
 }
