@@ -6,10 +6,38 @@
     </head>
     <body>
         <div class = "container">
+            <?php
+            include "koneksi.php";
 
+            function input($data) {
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $nama = input($_POST["nama"]);
+                $instansi = input($_POST["instansi"]);
+                $jurusan = input($_POST["jurusan"]);
+                $no_hp = input($_POST["no_hp"]);
+                $alamat = input($_POST["alamat"]);
+
+                $sql = "insert into peserta (nama,instansi,jurusan,no_hp,alamat) values
+                ('$nama','$instansi','$jurusan','$no_hp','$alamat')";
+
+                $hasil = mysqli_query($kon,$sql);
+
+                if ($hasil) {
+                    header("Location:index.php");
+                } else {
+                    echo "<div class='alert alert-danger'> Data Gagal Disimpan.</div>";
+                }
+            }
+            ?>
 
             <h2>Input Data</h2>
-            <form action="" method="POST">
+            <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
             <div class = "form-group">
                 <label>Nama : </label>
                 <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama" required />

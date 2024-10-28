@@ -1,12 +1,12 @@
 <?php
-//$host = "localhost";
-//$user = "root";
-//$pass = "";
-//$dbname = "katalog_jilbab";
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "crud";
 
-//$conn = new mysqli($host, $user, $pass, $dbname);
+$kon = mysqli_connect($host, $user, $password, $db);
 
-//if ($conn->connect_error) {
-  //  die("Koneksi gagal: " . $conn->connect_error);
-//}
+if (!$kon) {
+  die("Koneksi Gagal:".mysqli_connect_error());
+}
 ?>
