@@ -1,12 +1,13 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "crud";
+$serverName = "localhost\SQLEXPRESS"; 
+$database = "crud";
 
-$kon = mysqli_connect($host, $user, $password, $db);
-
-if (!$kon) {
-  die("Koneksi Gagal:".mysqli_connect_error());
+try {
+    // Buat koneksi menggunakan PDO
+    $kon = new PDO("sqlsrv:server=$serverName;Database=$database");
+    // Set error mode ke exception
+    $kon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Koneksi Gagal: " . $e->getMessage());
 }
 ?>

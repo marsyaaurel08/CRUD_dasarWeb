@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <title>Form</title>
+    <title>Peserta Seminar</title>
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -15,15 +15,15 @@
         <?php
         include "koneksi.php";
 
-        if (isset($_GET['id_peserta'])) {
-            $id_peserta = htmlspecialchars($_GET['id_peserta']);
-
-            $sql = "DELETE FROM peserta WHERE id_peserta='$id_peserta'";
-
-            $hasil = mysqli_query($kon, $sql);
+        if (isset($_GET['id_pendaftar'])) {
+            $id_pendaftar = htmlspecialchars($_GET['id_pendaftar']);
+            $sql = "DELETE FROM peserta WHERE id_pendaftar=?";
+            $stmt = $kon->prepare($sql);
+            $hasil = $stmt->execute([$id_pendaftar]);
 
             if ($hasil) {
-                header("Location:index.php");
+                header("Location: index.php");
+                exit();
             } else {
                 echo "<div class='alert alert-danger'>Data gagal dihapus.</div>";
             }
@@ -44,11 +44,12 @@
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM peserta ORDER BY id_peserta DESC";
-                $hasil = mysqli_query($kon, $sql);
+                $sql = "SELECT * FROM peserta ORDER BY id_pendaftar DESC";
+                $stmt = $kon->prepare($sql);
+                $stmt->execute();
                 $no = 0;
 
-                while ($data = mysqli_fetch_array($hasil)) {
+                while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     $no++;
                     ?>
                     <tr>
@@ -59,8 +60,8 @@
                         <td><?php echo htmlspecialchars($data["no_hp"]); ?></td>
                         <td><?php echo htmlspecialchars($data["alamat"]); ?></td>
                         <td>
-                            <a href="update.php?id_peserta=<?php echo htmlspecialchars($data['id_peserta']); ?>" class="btn btn-warning">Edit</a>
-                            <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id_peserta=<?php echo htmlspecialchars($data['id_peserta']); ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
+                            <a href="update.php?id_pendaftar=<?php echo htmlspecialchars($data['id_pendaftar']); ?>" class="btn btn-warning">Edit</a>
+                            <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>?id_pendaftar=<?php echo htmlspecialchars($data['id_pendaftar']); ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
                         </td>
                     </tr>
                     <?php
@@ -69,7 +70,7 @@
             </tbody>
         </table>
         <br>
-        <a href="create.php" class="btn btn-primary " role="button">Tambah Data</a>
+        <a href="create.php" class="btn btn-primary" role="button">Tambah Data</a>
     </div>
 </body>
 </html>
