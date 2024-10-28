@@ -13,15 +13,15 @@
             return htmlspecialchars(stripslashes(trim($data)));
         }
 
-        // Inisialisasi variabel untuk data
+        
         $nama = $instansi = $jurusan = $no_hp = $alamat = "";
         $id_pendaftar = null;
 
-        // Mendapatkan data lama untuk ditampilkan pada form
+        
         if (isset($_GET['id_pendaftar'])) {
             $id_pendaftar = input($_GET["id_pendaftar"]);
 
-            // Pastikan id_pendaftar valid dan bukan null
+        
             if (!empty($id_pendaftar)) {
                 $stmt = $kon->prepare("SELECT * FROM peserta WHERE id_pendaftar = :id_pendaftar");
                 $stmt->bindParam(':id_pendaftar', $id_pendaftar, PDO::PARAM_INT);
@@ -60,7 +60,7 @@
                 WHERE id_pendaftar = :id_pendaftar";
 
             $stmt = $kon->prepare($sql);
-            // Bind parameters
+            
             $stmt->bindParam(':nama', $nama);
             $stmt->bindParam(':instansi', $instansi);
             $stmt->bindParam(':jurusan', $jurusan);
